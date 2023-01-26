@@ -1,13 +1,52 @@
-const heading = React.createElement(
-  "h1",
-  { id: "hello", className: "world", hello: "world" },
-  "Hello from React"
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const Title = () => (
+  <img src="http://lh3.googleusercontent.com/Em7AHf7XBH_RtGfCBVXz9RH8SM_pHkj3xPP-yd3cRguY1_Jc8fmqgx6WxnvGVyPV5xs5gL3HCD0FCuv6Xo4CwoY6ak4"
+    alt="logo"
+    className ="logo" />
 );
-console.log(heading);
+
+
+
+const Header = () => (
+  <div className = "header">
+    <Title />
+    <div className ="nav_items">
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Cart</li>
+      </ul>
+
+    </div>
+  </div>
+);
+
+const Body  = () => {
+  return (
+    <>
+      <h1>Body Component</h1>
+    </>
+  )
+}
+
+const Footer = () => (
+  <>
+    Footer
+  </>
+)
+
+const AppLayout = () => {
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  )
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-const h1 = React.createElement("h1", { id: "title" }, "Heading 1 from React");
-const h2 = React.createElement("h2", { id: "title" }, "Heading 2 from React");
-const div = React.createElement("div", { id: "container" }, [h1, h2]);
-
-root.render(div);
+root.render(<AppLayout ></AppLayout>);
