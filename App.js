@@ -1485,17 +1485,29 @@ const restaurantList = [
                 "subtype": "basic"
               },]
 
-const RestaurantCard = () => {
+const RestaurantCard = ({ 
+cloudinaryImageId,
+name,
+cuisines,
+avgRating,
+deliveryTime,
+costForTwoString
+ }) => {
   return (
     <div className="card">
-      <img src={"https://res.cloudinary.com/swiggy/image/upload/" + 
-      restaurantList[0].data?.cloudinaryImageId} alt="logo" />
-      <h2>{restaurantList[0].data?.name}</h2>
-      <h3>{restaurantList[0].data?.cuisines.join(", ")}</h3>
-      <div className = "card_data">
-        <p>{restaurantList[0].data?.avgRating} stars</p>
-        <p>{restaurantList[0].data?.deliveryTime} MINS</p>
-        <p>{restaurantList[0].data?.costForTwoString}</p>
+      <img
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/" +
+          cloudinaryImageId
+        }
+        alt="logo"
+      />
+      <h2>{name}</h2>
+      <p>{cuisines.join(", ")}</p>
+      <div className="card_data">
+        <p>{avgRating} stars</p>
+        <p>{deliveryTime} MINS</p>
+        <p>{costForTwoString}</p>
       </div>
     </div>
   );
@@ -1503,19 +1515,19 @@ const RestaurantCard = () => {
 
 const Body  = () => {
   return (
-    <div className ="restaurants">
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
+    <div className="restaurants">
+      <RestaurantCard {...restaurantList[0].data} />
+      <RestaurantCard {...restaurantList[1].data} />
+      <RestaurantCard {...restaurantList[2].data} />
+      <RestaurantCard {...restaurantList[3].data} />
+      <RestaurantCard {...restaurantList[4].data} />
+      <RestaurantCard {...restaurantList[5].data} />
+      <RestaurantCard {...restaurantList[6].data} />
+      <RestaurantCard {...restaurantList[7].data} />
+      <RestaurantCard {...restaurantList[8].data} />
+      <RestaurantCard {...restaurantList[9].data} />
     </div>
-  )
+  );
 }
 
 const Footer = () => (

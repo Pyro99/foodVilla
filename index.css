@@ -27,10 +27,12 @@
 }
 .card > img {
     width :100%;
+    height :250px;
 }
 .card_data {
     display :flex;
     justify-content: space-between;
+    
 }
 
 .restaurants {
