@@ -18,3 +18,22 @@
 .logo{
     width :100px;
 }
+
+.card {
+    border: 1px solid black;
+    width : 250px;
+    padding :10px;
+    margin :10px;
+}
+.card > img {
+    width :100%;
+}
+.card_data {
+    display :flex;
+    justify-content: space-between;
+}
+
+.restaurants {
+    display :flex;
+    flex-wrap: wrap;
+}
