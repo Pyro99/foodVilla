@@ -39,3 +39,10 @@
     display :flex;
     flex-wrap: wrap;
 }
+.search_container {
+    margin :10px;
+}
+
+.search_btn {
+    margin:2px;
+}
