@@ -54,11 +54,11 @@ const Body = () => {
       </div>
 
       <div className="restaurants">
-        {filteredRestaurants.length === 0 ? (
+        {filteredRestaurants?.length === 0 ? (
           <h1>No restaurant's matched your filter!!</h1>
         ) : (
           filteredRestaurants.map((restaurants) => (
-            <RestaurantCard key={restaurants.data.id} {...restaurants.data} />
+            <RestaurantCard key={restaurants?.data?.id} {...restaurants?.data} />
           ))
         )}
       </div>
