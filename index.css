@@ -57,3 +57,11 @@
     padding :10px;
     
 }
+
+.menu_img{
+    height :250px;
+    width :250px;
+}
+.menu{
+    display : flex;
+}
