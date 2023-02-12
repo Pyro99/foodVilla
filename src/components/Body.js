@@ -9,7 +9,7 @@ import useIsOnline from "../utils/useIsOnline";
 const Body = () => {
   const [searchText, setSearchText] = useState("");
 
-  const [allRestaurants, filteredRestaurants] = useRestaurant();
+  const [allRestaurants, filteredRestaurants, setFilteredRestaurants] = useRestaurant();
 
   //Early return
   if (!allRestaurants) return null;
@@ -22,16 +22,16 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="m-3 p-2 bg-pink-50 text-center">
+      <div className="flex justify-center m-5 bg-pink-50">
         <input
+        className = "bg-gray-200 rounded-l-full p-4 w-[40rem] outline-none"
           type="text"
           placeholder="Search"
-          className="search_input"
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}
         />
         <button
-          className="py-1 px-3  m-2 bg-purple-500 rounded-full"
+          className="bg-pink-500 text-white px-4 py-2 rounded-r-full"
           onClick={() => {
             const filteredData = filterRestaurants(searchText, allRestaurants);
             setFilteredRestaurants(filteredData);
@@ -42,7 +42,6 @@ const Body = () => {
       </div>
 
       <div className="restaurants">
-        {" "}
         {filteredRestaurants?.length === 0 ? (
           <h1>No restaurant's matched your filter!!</h1>
         ) : (
