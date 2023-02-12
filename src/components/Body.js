@@ -41,7 +41,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="restaurants">
+      <div className="flex flex-wrap">
         {filteredRestaurants?.length === 0 ? (
           <h1>No restaurant's matched your filter!!</h1>
         ) : (

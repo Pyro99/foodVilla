@@ -9,23 +9,28 @@ const Menu = () => {
   const menu = useRestaurantMenu(id);
 
   return (!menu) ? <Shimmer /> : (
-    <div className = "menu">
-      <div>
+    <div className = "grid grid-flow-col text-xl">
+      <div className="col-span-1">
+        <h2 className ="text-5xl font-bold">{menu?.name}</h2>
         <h1>Restaurant id : {id}</h1>
-        <h2>{menu?.name}</h2>
-        <img className="menu_img" src={Image_URL + menu.cloudinaryImageId} />
+        <img className="w-96 border shadow-purple-200 shadow-lg" src={Image_URL + menu.cloudinaryImageId} />
+        <div className ="mt-10">
         <h3>Area : {menu.area}</h3>
         <h3>City:{menu.city}</h3>
         <h3>Rating:{menu.avgRating}</h3>
         <h3>{menu.costForTwoMsg}</h3>
+        </div>
       </div>
-      <div className="menu_items">
-        <h1>Menu</h1>
-        <ul>
+      <div className="pl-24 col-span-11">
+        <h1 className ="text-2xl text-center bg-purple-200">Menu</h1>
           {Object.values(menu?.menu?.items)?.map((item) => (
-            <li key ={item.id}>{item.name}</li>
+                <ul className = "flex pt-3 justify-between" key ={item?.id}>
+                  <li className = "w-20">{item.cloudinaryImageId === "" ? null : !item.cloudinaryImageId ? null :
+                  <img src = {Image_URL + item.cloudinaryImageId} alt="menuLogo" /> }</li>
+                  <li>{item?.name}</li>
+                  <li>₹{item?.price / 100}</li>
+            </ul>
           ))}
-        </ul>
       </div>
     </div>
   );
