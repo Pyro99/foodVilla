@@ -1,6 +1,13 @@
 export const Image_URL = "https://res.cloudinary.com/swiggy/image/upload/";
 
+export const Restaurant_Menu_URL =
+  "https://www.swiggy.com/dapi/menu/v4/full?lat=19.0738955&lng=72.886596&menuId=";
 
+export const All_Restaurants_URL =
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0738955&lng=72.886596&page_type=DESKTOP_WEB_LISTING";
+
+export const logo =
+  "https://lh3.googleusercontent.com/Em7AHf7XBH_RtGfCBVXz9RH8SM_pHkj3xPP-yd3cRguY1_Jc8fmqgx6WxnvGVyPV5xs5gL3HCD0FCuv6Xo4CwoY6ak4=w256-rw";
 export const restaurantList = [
   {
     type: "restaurant",
