@@ -9,15 +9,17 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Menu from "./components/Menu";
 import Instamart from "./components/Instamart";
-
-
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 const AppLayout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <Provider store={store}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </Provider>
     </>
   );
 };
@@ -46,12 +48,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:id",
-        element:<Menu /> ,
-      }
-    ]
-  }
+        element: <Menu />,
+      },
+    ],
+  },
 ]);
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router ={appRouter} />);
+root.render(<RouterProvider router={appRouter} />);
